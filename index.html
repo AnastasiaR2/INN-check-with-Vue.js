@@ -14,6 +14,13 @@
   <div class="container" id="app">
     <h1 class="my-4">Введите ИНН</h1>
     <input v-model="inn" type="text">
+    <div v-if="checkValidity">
+      <p class="text-success fs-5 my-3">Корректен!</p> 
+      <p>Дата рождения: {{getBirthDate}}</p>
+      <p>Пол: {{getGender}}</p>
+      <p>Знак зодиака: {{getZodiacSign}}, символ: {{getChineseSign}}</p>
+    </div>
+    <p v-else-if="checkValidity == false" class="text-danger fs-5 my-3">Не корректен!</p>
   </div>
 
 </body>
